@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
+# This function performs a financial analysis of a financial dataset with two columns: Data and Profit/Losses
 def financial_analysis(x):
     path = Path().resolve() / x
     budget_data = pd.read_csv(path)
@@ -38,7 +39,9 @@ def financial_analysis(x):
         Greatest Decrease in Profits: {date_of_greatest_decrease} (${greatest_decrease})
         '''
     )
-           
+
+# This function creates a text file of the output of our Financial Analysis.
+# Running this function will perform an analysis on the input 'csv' file and export the output to a text file             
 def create_financial_analysis_text(x):
     body = financial_analysis(x)
     with open('analysis.txt', 'w') as f:
